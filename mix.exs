@@ -9,7 +9,8 @@ defmodule MontgomeryReduction.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       name: "Montgomery reduction",
-      description: "A high-performance Elixir library for efficient modular arithmetic using Montgomery reduction.",
+      description:
+        "A high-performance Elixir library for efficient modular arithmetic using Montgomery reduction.",
       docs: docs(),
       package: package(),
       aliases: aliases(),
