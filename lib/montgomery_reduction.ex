@@ -88,7 +88,7 @@ defmodule MontgomeryReduction do
 
   ## Error Cases
 
-  The function will raise a `RuntimeError` if:
+  The function will raise a `ArithmeticError` if:
 
     * The modulus `n` is even (Montgomery reduction requires odd moduli)
     * The input value `t` is greater than or equal to $n 2^{r_{bits}}$
@@ -105,7 +105,7 @@ defmodule MontgomeryReduction do
   def of(n, r_bits \\ 256)
 
   def of(n, _) when Bitwise.band(n, 1) == 0 do
-    raise RuntimeError, "MontgomeryReduction.of(#{n}) should be odd number."
+    raise ArithmeticError, "MontgomeryReduction.of(#{n}) should be odd number."
   end
 
   def of(n, r_bits) do
@@ -123,7 +123,7 @@ defmodule MontgomeryReduction do
         end
 
       t ->
-        raise RuntimeError, "MontgomeryReduction #{t} should be less than #{n} * 2^#{r_bits}."
+        raise ArithmeticError, "MontgomeryReduction #{t} should be less than #{n} * 2^#{r_bits}."
     end
   end
 end
