@@ -22,10 +22,10 @@ defmodule MontgomeryReduction do
 
   ## Mathematical Background
 
-  Montgomery reduction computes `(t * R^(-1)) mod n` where:
-  - `R = 2^r_bits` is the Montgomery radix (typically a power of 2)
-  - `R^(-1)` is the modular multiplicative inverse of R modulo n
-  - `n` is the modulus (must be odd)
+  Montgomery reduction computes $tR^{-1} \\mod n$ where:
+  - $R = 2^{r\\_bits}$ is the Montgomery radix (typically a power of 2)
+  - $R^{-1}$ is the modular multiplicative inverse of R modulo n
+  - $n$ is the modulus (must be odd)
 
   This transformation allows modular multiplication to be performed using only
   additions, multiplications, and bit shifts, making it much more efficient
@@ -91,13 +91,13 @@ defmodule MontgomeryReduction do
   The function will raise a `RuntimeError` if:
 
     * The modulus `n` is even (Montgomery reduction requires odd moduli)
-    * The input value `t` is greater than or equal to `n * 2^r_bits`
+    * The input value `t` is greater than or equal to $n 2^{r_{bits}}$
 
   ## Mathematical Background
 
-  Montgomery reduction computes `(t * R^(-1)) mod n` where:
-  - `R = 2^r_bits` is the Montgomery radix
-  - `R^(-1)` is the modular multiplicative inverse of R modulo n
+  Montgomery reduction computes $tR^{-1} \\mod n$ where:
+  - $R = 2^{r\\_bits}$ is the Montgomery radix
+  - $R^{-1}$ is the modular multiplicative inverse of R modulo n
 
   This is useful for efficient modular arithmetic, especially in cryptographic applications.
   """

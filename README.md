@@ -67,10 +67,10 @@ reducer.(1000000)  # Input exceeds n * 2^r_bits
 
 ## Mathematical Background
 
-Montgomery reduction computes `(t * R^(-1)) mod n` where:
-- `R = 2^r_bits` is the Montgomery radix (typically a power of 2)
-- `R^(-1)` is the modular multiplicative inverse of R modulo n
-- `n` is the modulus (must be odd)
+Montgomery reduction computes $tR^{-1} \mod n$ where:
+- $R = 2^{r\_bits}$ is the Montgomery radix (typically a power of 2)
+- $R^{-1}$ is the modular multiplicative inverse of R modulo n
+- $n$ is the modulus (must be odd)
 
 This transformation allows modular multiplication to be performed using only additions, multiplications, and bit shifts, making it much more efficient than traditional modular arithmetic for large numbers.
 
@@ -86,14 +86,6 @@ Montgomery reduction is particularly beneficial when:
 This library depends on:
 - `binary_gcd` for efficient GCD calculations
 - `nstandard` for development tooling
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## License
 
